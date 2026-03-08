@@ -42,8 +42,8 @@ To use the system locally:
 If the application starts but authentication fails with a 401 response, a possible cause of failure is the incorrect population of the Mongo userDetails collection. To resolve the issue, choose a new username aand password, use the `getEncryptedPassword` endpoint to encrypt the password, enter a new object in to the memex.userDetails Mongo collection where the object has a "password" value that is the encrypted password and an "_id" value that is the chosen username, then reattempt login using the chosen username and the password.
 
 Using the app:
-   - Select the plus sign to create a new entry (entries created without use of the plus sign may not be persisted to the Mongo database).
-   - Type in the dark grey text box to populate the entry.
-   - Use the search function in the 'Retrieval' tab to retrieve entries, where no search string returns all entries, and where typos of up to 1 character are permitted (see the 'fuzziness' variable in the `RawTextESRestTemplate` class of the memex-spring-data library)
+   - Select the plus sign to create a new entry.
+   - Type in the dark grey text box to populate the entry. Please allow 5 to 10 seconds for the entry to automatically persist (see the 'timeInterval' variable in the `EntryScreenComponent` class of the memex-ui program).
+   - Use the search function in the 'Retrieval' tab to retrieve entries, where no search string returns all entries, and where typos of up to 1 character are permitted (see the 'fuzziness' variable in the `RawTextESRestTemplate` class of the memex-spring-data library).
    - Delete entries by wiping out the content in the UI or by removing the entry from Mongo. Proper delete functionality is not implemented.
 
