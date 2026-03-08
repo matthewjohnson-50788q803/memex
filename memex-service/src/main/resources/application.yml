@@ -10,9 +10,9 @@ db:
 
 security:
   oauth2:
-    encKeySecret: ${TOKEN_ENC_KEY_SECRET:howMuchABulldozerCares}
+    encKeySecret: ${AUTH_TOKEN_ENC_KEY_SECRET:aSecretValue}
   userPassword:
-    encKeySecret: ${USERPASS_ENC_KEY_SECRET:notAtAll}
+    encKeySecret: ${USERPASS_ENC_KEY_SECRET:aSecretValueWithDifferentContent}
 
 logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
 
