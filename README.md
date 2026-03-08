@@ -45,5 +45,5 @@ Using the app:
    - Select the plus sign to create a new entry.
    - Type in the dark grey text box to populate the entry. Please allow 5 to 10 seconds for the entry to automatically persist (see the 'timeInterval' variable in the `EntryScreenComponent` class of the memex-ui program).
    - Use the search function in the 'Retrieval' tab to retrieve entries, where no search string returns all entries, and where typos of up to 1 character are permitted (see the 'fuzziness' variable in the `RawTextESRestTemplate` class of the memex-spring-data library).
-   - Delete entries by wiping out the content in the UI or by removing the entry from Mongo. Proper delete functionality is not implemented.
+   - Delete entries by wiping out the content on the entry screen of the UI or by removing the entry from Mongo. Proper delete functionality is not implemented.
 
