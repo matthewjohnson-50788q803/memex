@@ -7,7 +7,7 @@ const users = db.userDetails.find({}).toArray();
 if (users.length === 0) {
     db.userDetails.insertOne({
         "_id" : "default",
-        "password" : "${MONGO_DEFAULT_USER_PW_ENCODED}",
+        "password" : "${DEFAULT_USER_PW_ENCODED}",
         "authorities" : [],
         "createDateTime" : now,
         "updateDateTime" : now,
