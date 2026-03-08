@@ -6,7 +6,7 @@ const users = db.userDetails.find({}).toArray();
 
 if (users.length === 0) {
     db.userDetails.insertOne({
-        "_id" : "default",
+        "_id" : "${DEFAULT_USER_USERNAME}",
         "password" : "${DEFAULT_USER_PW_ENCODED}",
         "authorities" : [],
         "createDateTime" : now,
