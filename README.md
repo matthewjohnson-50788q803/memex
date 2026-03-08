@@ -39,11 +39,11 @@ To use the system locally:
    - Click any button to prompt a login
    - Login using the user name and password that were entered when starting the memex-service
 
-If the application starts but authentication fails with a 401 response, a possible cause of failure is the incorrect population of the Mongo userDetails collection. To resolve the issue, use the `getEncryptedPassword` endpoint to encrypt a password, enter a new object in to the memex.userDetails Mongo collection with the encrypted password in the "password" variable and any value in the "username" variable, and then reattempt login using the entered username and the password submitted to the encryption endpoint.
+If the application starts but authentication fails with a 401 response, a possible cause of failure is the incorrect population of the Mongo userDetails collection. To resolve the issue, choose a new username aand password, use the `getEncryptedPassword` endpoint to encrypt the password, enter a new object in to the memex.userDetails Mongo collection where the object has a "password" value that is the encrypted password and a "username" value that is the chosen username, then reattempt login using the chosen username and the password.
 
 Using the app:
-   - Select the plus sign to create a new entry (entries created without use of the plus sign may not be persisted).
-   - Type in the darker grey text box to populate the entry.
+   - Select the plus sign to create a new entry (entries created without use of the plus sign may not be persisted to the Mongo database).
+   - Type in the dark grey text box to populate the entry.
    - Use the search function in the 'Retrieval' tab to retrieve entries, where no search string returns all entries, and where typos of up to 1 character are permitted (see the 'fuzziness' variable in the `RawTextESRestTemplate` class of the memex-spring-data library)
-   - Delete entries by wiping out the content in the UI or by removing the entry from Mongo
+   - Delete entries by wiping out the content in the UI or by removing the entry from Mongo. Proper delete functionality is not implemented.
 
