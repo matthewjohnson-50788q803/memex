@@ -18,12 +18,12 @@ The repository also contains the following library:
 
 - memex-spring-data
 
-The system is not currently in use, but had previously been deployed to AWS on a Kubernetes single node cluster, which was initialized by the configurations and scripts in the [matthewjohnson42/kubernetes-standalone](https://github.com/matthewjohnson42/kubernetes-standalone) repository.
+The system is not currently in use, but had previously been deployed to AWS on a Kubernetes single node cluster. The system was used to record personal journal entries.
 
 
 To use the system locally:
  - Install system level dependencies
-   - Java 11 with JAVA_HOME set
+   - Java 17+ with JAVA_HOME set
    - Docker daemon (any version)
    - npm version 10 (packaged with Node version 22)
    - Mongo DB client, version 4+
@@ -42,7 +42,7 @@ To use the system locally:
 If the application starts but authentication fails with a 401 response, a possible cause of failure is the incorrect population of the Mongo userDetails collection. To resolve the issue, use the `getEncryptedPassword` endpoint to encrypt a password, enter a new object in to the memex.userDetails Mongo collection with the encrypted password in the "password" variable and any value in the "username" variable, and then reattempt login using the entered username and the password submitted to the encryption endpoint.
 
 Using the app:
-   - Select the plus sign to create a new entry.
+   - Select the plus sign to create a new entry (entries created without use of the plus sign may not be persisted).
    - Type in the darker grey text box to populate the entry.
    - Use the search function in the 'Retrieval' tab to retrieve entries, where no search string returns all entries, and where typos of up to 1 character are permitted (see the 'fuzziness' variable in the `RawTextESRestTemplate` class of the memex-spring-data library)
    - Delete entries by wiping out the content in the UI or by removing the entry from Mongo
