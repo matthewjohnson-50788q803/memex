@@ -39,7 +39,7 @@ To use the system locally:
    - Click any button to prompt a login
    - Login using the user name and password that were entered when starting the memex-service
 
-If the application starts but authentication fails with a 401 response, a possible cause of failure is the incorrect population of the Mongo userDetails collection. To resolve the issue, choose a new username aand password, use the `getEncryptedPassword` endpoint to encrypt the password, enter a new object in to the memex.userDetails Mongo collection where the object has a "password" value that is the encrypted password and a "username" value that is the chosen username, then reattempt login using the chosen username and the password.
+If the application starts but authentication fails with a 401 response, a possible cause of failure is the incorrect population of the Mongo userDetails collection. To resolve the issue, choose a new username aand password, use the `getEncryptedPassword` endpoint to encrypt the password, enter a new object in to the memex.userDetails Mongo collection where the object has a "password" value that is the encrypted password and an "_id" value that is the chosen username, then reattempt login using the chosen username and the password.
 
 Using the app:
    - Select the plus sign to create a new entry (entries created without use of the plus sign may not be persisted to the Mongo database).
